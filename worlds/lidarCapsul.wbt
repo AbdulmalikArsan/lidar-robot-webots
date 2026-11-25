@@ -1,0 +1,505 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.175076943192117 0.17361108530228006 -0.9691270582450314 1.6105532314137374
+  position 0.02189381403359198 2.5363819239823986 1.1369411625355865
+  follow "robot:solid"
+  followType "Mounted Shot"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 5 5
+}
+Robot {
+  translation 1.943872447194326e-07 0.029790885065339442 0.05924715046107702
+  rotation -0.9999999999999556 2.0063758796911886e-07 -2.2032345680063203e-07 1.5674547636059646
+  children [
+    Lidar {
+      translation 0 -0.01 -0.1
+      rotation -0.577349935856137 0.577349935856137 0.5773509358560258 2.09439
+      children [
+        DEF lidar Shape {
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      boundingObject USE lidar
+      physics Physics {
+      }
+    }
+    DEF kiri HingeJoint {
+      jointParameters HingeJointParameters {
+        position -2.4694444914289277e-10
+        anchor 0.05 0.03 -0.0200002
+      }
+      device [
+        RotationalMotor {
+          name "motor_kiri"
+        }
+      ]
+      endPoint Solid {
+        translation 0.04999999999999919 0.02999067157074378 -0.0200002350177936
+        rotation -5.29855014702703e-09 1 -5.298575968110863e-09 1.5707999999999915
+        children [
+          DEF kiri Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0 0 0
+              }
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE kiri
+        physics Physics {
+        }
+      }
+    }
+    DEF disable HingeJoint {
+      jointParameters HingeJointParameters {
+        position 2.6023116815707172e-06
+        anchor 0.05 0.03 -0.0200002
+      }
+      device [
+        RotationalMotor {
+          name "disable"
+        }
+      ]
+      endPoint Solid {
+        translation 1.734640004691368e-07 0.029990491815065506 0.05999979997552761
+        rotation 1.3011509315937473e-06 0.999999999998307 1.301155704806063e-06 1.5708000000016833
+        children [
+          DEF dis Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0 0 0
+              }
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE dis
+        physics Physics {
+        }
+      }
+    }
+    DEF kanan HingeJoint {
+      jointParameters HingeJointParameters {
+        position -2.8759750136941875e-10
+        anchor -0.05 0.03 -0.0200002
+      }
+      device [
+        RotationalMotor {
+          name "motor_kanan"
+        }
+      ]
+      endPoint Solid {
+        translation -0.05000000000000059 0.029990671570913056 -0.020000235017779477
+        rotation -6.020986994230552e-09 1 -6.02099497927095e-09 1.570799999999992
+        children [
+          DEF kanan Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0 0 0
+              }
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE kanan
+        physics Physics {
+        }
+      }
+    }
+    DEF body Solid {
+      children [
+        DEF body Shape {
+          geometry Capsule {
+            height 0.1
+            radius 0.05
+          }
+        }
+      ]
+      boundingObject USE body
+      physics Physics {
+      }
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+  }
+  controller "capsul"
+}
+Solid {
+  translation 0.8840032769184227 -2.450375620027557 0.04960820132037794
+  rotation -1 4.203119429658626e-15 -2.2326320397226013e-14 0.0038028459604652113
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation 0.22193197109168672 -1.9104276899261754 0.04960759880604619
+  rotation 0.8281406667226214 0.5520937778150833 0.09682714814596971 9.266374487535424e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation -0.32946223022743926 -0.8527261322313382 0.04960759880604619
+  rotation 0.8281406667226214 0.5520937778150833 0.09682714814596971 9.266374487535424e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation -0.7577245732869727 -0.5424440293194008 0.0496075988060462
+  rotation 0.6723325585191856 -0.7395658143710965 -0.03180152462796268 1.2681987092668753e-16
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation 1.0248002529663585 -2.450375402217733 0.04960792224484784
+  rotation -1 3.387182814972758e-14 3.370627021379249e-14 0.003797892872522859
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(4)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation 0.7350356675672196 -1.577192599370364 0.04960759880604619
+  rotation 0.0873701302023631 0.8737013020235879 0.478552499931522 9.759070759506565e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(5)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation 1.0918528741997608 -0.9627373145522011 0.04960759880604619
+  rotation 0.0873701302023631 0.8737013020235879 0.478552499931522 9.759070759506565e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(6)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation -0.41736065821264146 -1.9288404688022802 0.04960759880604619
+  rotation 0.8281406667226214 0.5520937778150833 0.09682714814596971 9.266374487535424e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(7)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation 0.6480264008907106 1.9917522365816775 0.04960637894397692
+  rotation 0.8886692973249407 -0.22216732433123312 0.4011340922827388 3.837878884659417e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(8)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation -0.6084631575322592 1.93529337217153 0.04960637894397692
+  rotation 0.8886692973249407 -0.22216732433123312 0.4011340922827388 3.837878884659417e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(9)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation -0.5843539094653307 0.8444114028055179 0.04960637894397692
+  rotation 0.8886692973249407 -0.22216732433123312 0.4011340922827388 3.837878884659417e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(10)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation 1.6538911256263775 1.5804501256817605 0.04960637894397692
+  rotation 0.8886692973249407 -0.22216732433123312 0.4011340922827388 3.837878884659417e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(11)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation 1.3536997139410913 1.2383496723745757 0.04960637894397692
+  rotation 0.8886692973249407 -0.22216732433123312 0.4011340922827388 3.837878884659417e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(12)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation -0.25297320696515024 0.5885451285767784 0.04960637894397692
+  rotation -0.3146941929722692 0.9440825789168152 0.09836487734607148 5.4189197128734536e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(13)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation 0.7812458972728082 1.2933756846649422 0.04960637894397692
+  rotation 0.8886692973249407 -0.22216732433123312 0.4011340922827388 3.837878884659417e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(14)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
+Solid {
+  translation -1.1476115343620013 0.6474524684800866 0.04960637894397692
+  rotation 0.8886692973249407 -0.22216732433123312 0.4011340922827388 3.837878884659417e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(15)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 1
+  ]
+}
